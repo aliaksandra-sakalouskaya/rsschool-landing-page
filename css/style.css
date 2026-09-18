@@ -10,7 +10,12 @@
     --border-primary: #C1B6AD;
     --border-inverse: #665F55;
 
-    --base-indent: 20px;
+    --indent-base: 20px;
+    --indent-xl: calc(var(--indent-base) * 4); /* 80px */
+    --indent-l: calc(var(--indent-base) * 2);  /* 40px */
+    --indent-s: calc(var(--indent-base) / 2);  /* 10px */
+    --indent-xs: calc(var(--indent-base) / 4); /* 5px */
+
 }
 
 :root[data-theme="dark"] {
@@ -60,6 +65,10 @@ body {
     margin: 0;
 }
 
+h1, h2 {
+    margin: 0;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -75,8 +84,8 @@ a {
     text-decoration: none;
     font-weight: 600;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-    padding-bottom: calc(var(--base-indent) / 4);
+    transition: all 0.3s ease;
+    padding-bottom: var(--indent-xs);
     outline: none;
     &:hover {
         color: inherit;
@@ -94,24 +103,54 @@ a {
 .container {
     max-width: 1400px;
     width: 100%;
-    padding: var(--base-indent) 0;
+    padding: 0 var(--indent-base);
     margin: 0 auto;
 }
 
+.italic {
+    color: var(--text-accent);
+    font-style: italic;
+}
+
+.button-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 5px;
+    max-width: 200px;
+    width: 100%;
+    height: 64px;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    border-radius: 100px;
+    border: none;
+
+    svg {
+        visibility: hidden;
+    }
+
+    &:hover {
+        color: var(--text-primary);
+        svg {
+            visibility: visible;
+        }
+    }
+}
+
 .header {
-    padding: 0 var(--base-indent);
+    padding: var(--indent-base) 0;
 }
 
 .header__inner {
     display: flex;
     align-items: center;
-    gap: 0 calc(2 * var(--base-indent));
+    gap: 0 calc(2 * var(--indent-base));
 }
 
 .header__controls {
     display: flex;
     align-items: center;
-    gap: 0 var(--base-indent);
+    gap: 0 var(--indent-base);
 }
 
 .logo {
@@ -126,7 +165,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0 calc(2 * var(--base-indent));
+    gap: 0 calc(2 * var(--indent-base));
 }
 
 .nav__link {
@@ -137,13 +176,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0 calc(var(--base-indent) / 4);
+    gap: 0 var(--indent-xs);
     border-radius: 100px;
     margin: 0;
     border: 1px solid var(--border-primary);
     width: 88px;
     height: 44px;
-    padding: calc(var(--base-indent) / 4);
+    padding: var(--indent-xs);
     background-color: transparent;
     cursor: pointer;
 }
@@ -168,6 +207,34 @@ a {
 .menu {
     display: flex;
     align-items: center;
-    gap: 0 calc(var(--base-indent) / 4);
+    gap: 0 var(--indent-xs);
 }
 
+.hero {
+    background-image: url(./../images/img-hero.png);
+    min-height: 644px;
+    background-size: cover;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+
+    padding-left: clamp(var(--indent-base), 5vw, var(--indent-xl));
+    padding-right: clamp(var(--indent-base), 5vw, var(--indent-xl));
+}
+
+.hero__inner {
+    max-width: 530px;
+    width: 100%;
+    color: var(--text-inverse);
+}
+
+.hero__title {
+    font-size: 72px;
+    line-height: 105%;
+    margin-bottom: var(--indent-l);
+}
+
+.hero__text {
+    line-height: 150%;
+    margin-bottom: var(--indent-l);
+}
