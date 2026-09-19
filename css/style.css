@@ -105,20 +105,17 @@ ul {
 
 p {
     margin: 0;
+    line-height: 150%;
 }
 
 a {
     color: inherit;
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
-    padding-bottom: var(--indent-xs);
     outline: none;
     &:hover {
         color: inherit;
-        text-decoration: none;
-        border-color: var(--text-primary);
     }
 }
 
@@ -151,8 +148,6 @@ svg {
     background-color: var(--bg-page);
     color: var(--text-primary);
     border-radius: 100px;
-    border: none;
-    padding: 0;
 
     svg {
         visibility: hidden;
@@ -197,8 +192,14 @@ svg {
     gap: 0 calc(2 * var(--indent-base));
 }
 
-.nav__link {
-    
+.nav__link,
+.menu {
+    border-bottom: 2px solid transparent;
+    padding-bottom: var(--indent-xs);
+
+    &:hover {
+        border-color: var(--text-primary);
+    }
 }
 
 .switch-theme {
@@ -259,13 +260,60 @@ svg {
     color: var(--text-inverse);
 }
 
-.hero__title {
+.hero__title,
+.hero__text {
     margin-bottom: var(--indent-l);
 }
 
-.hero__text {
-    line-height: 150%;
+.app {
+    display: flex;
+    align-items: center;
+    gap: 0 120px;
+    padding-top: var(--indent-xl);
+}
+
+.app__title,
+.app__text {
     margin-bottom: var(--indent-l);
+}
+
+.store {
+    display: flex;
+    align-items: center;
+    gap: 0 var(--indent-base);
+}
+
+.store__link {
+    display: flex;
+    align-items: center;
+    gap: 0 var(--indent-s);
+    width: 200px;
+    height: 64px;
+    border: 1px solid var(--border-inverse);
+    border-radius: 100px;
+    padding: 0 var(--indent-base);
+    svg {
+        min-width: 30px;
+        width: 30px;
+    }
+    span {
+        display: block;
+    }
+
+    &:hover {
+        background-color: var(--bg-container);
+        border-color: var(--bg-container);
+        color: var(--text-inverse);
+    }
+}
+
+.store__offer {
+    font-size: 10px;
+    line-height: 140%;
+}
+
+.store__type {
+    line-height: 150%;
 }
 
 .footer {
@@ -280,7 +328,7 @@ svg {
     justify-content: space-between;
     align-items: center;
     padding: 100px;
-    gap: 100px;
+    gap: 0 100px;
 }
 
 .media {
@@ -289,7 +337,7 @@ svg {
 
 .contacts {
     flex: 1;
-}
+} 
 
 .media__title {
     margin-bottom: var(--indent-l);
@@ -301,7 +349,6 @@ svg {
 }
 
 .media__link {
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,10 +382,6 @@ svg {
     display: flex;
     align-items: flex-start;
     gap: 0 var(--indent-xs);
-
-    a {
-        border: none;
-        padding: 0;
-    }
 }
+
 
