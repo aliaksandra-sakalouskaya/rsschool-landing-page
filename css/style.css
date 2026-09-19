@@ -265,6 +265,29 @@ svg {
     margin-bottom: var(--indent-l);
 }
 
+.place {
+    padding-top: var(--indent-xl);
+}
+
+.place__title {
+    margin-bottom: 30px;
+}
+
+.place__grid {
+    display: flex;
+    gap: 0 30px;
+}
+
+.place__item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px 0;
+    img {
+        border-radius: 20px;
+        object-fit: cover;
+    }
+}
+
 .app {
     display: flex;
     align-items: center;
