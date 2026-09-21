@@ -1,0 +1,124 @@
+.header {
+    padding: var(--indent-base) 0;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    gap: 0 calc(2 * var(--indent-base));
+}
+
+.header__controls {
+    display: flex;
+    align-items: center;
+    gap: 0 var(--indent-base);
+}
+
+.logo {
+    border: none;
+}
+
+.nav {
+    flex-grow: 1;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 calc(2 * var(--indent-base));
+}
+
+.nav__link,
+.menu__link {
+    border-bottom: 2px solid transparent;
+    padding-bottom: var(--indent-xs);
+
+    &:hover {
+        border-color: var(--text-primary);
+    }
+}
+
+.menu__link.is-active {
+    border-color: var(--text-primary);
+}
+
+.switch-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 var(--indent-xs);
+    border-radius: 100px;
+    margin: 0;
+    border: 1px solid var(--border-primary);
+    width: 88px;
+    height: 44px;
+    padding: var(--indent-xs);
+    background-color: transparent;
+}
+
+.switch-theme__icon {
+    border-radius: 50%;
+    background-color: var(--text-accent);
+    color: var(--text-inverse);
+    padding: 8px;
+    transition: all 0.3s ease;
+    min-width: unset;
+    width: unset;
+
+    &:hover {
+        background-color: var(--bg-container);
+        color: var(--text-inverse);
+    }
+}
+
+.switch-theme__icon--dark {
+    color: var(--text-primary);
+}
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    gap: 0 var(--indent-xs);
+    transform: translateY(var(--indent-xs));
+}
+
+.burger {
+    background-color: transparent;
+    border: 1px solid var(--border-inverse);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    display: none;
+
+    svg {
+        min-width: 14px;
+        width: 14px;
+    }
+}
+
+@media (max-width: 992px) { 
+    .header__inner,
+    .nav__list {
+        gap: 0 var(--indent-base);
+    }
+}
+
+@media (max-width: 768px) {
+    .header__inner {
+        justify-content: space-between;
+    }
+
+    .menu,
+    .nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+}
