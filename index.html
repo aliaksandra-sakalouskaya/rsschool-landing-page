@@ -22,7 +22,7 @@
                     <img class="logo__icon logo__icon--light" src="./images/logo.svg" alt="Resource Coffee House">
                     <img class="logo__icon logo__icon--dark" src="./images/logo-dark.svg" alt="Resource Coffee House">
                 </a>
-                <nav class="nav">
+                <nav class="nav" id="mobile-nav">
                     <ul class="nav__list">
                         <li class="nav__item">
                             <a class="nav__link" href="index.html#favorite">
@@ -42,6 +42,17 @@
                         <li class="nav__item">
                             <a class="nav__link" href="index.html#contact">
                                 Contact us
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="button-primary nav__menu" href="menu.html">
+                                <span>Menu</span>
+                                <svg viewBox="0 0 20 20" fill="none">
+                                    <path d="M14.167 9.76667V11.6667C14.167 14.8883 11.5553 17.5 8.33366 17.5C5.112 17.5 2.50033 14.8883 2.50033 11.6667V9.76667C2.50033 9.4353 2.76896 9.16667 3.10033 9.16667H13.567C13.8984 9.16667 14.167 9.4353 14.167 9.76667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.0003 7.50008C10.0003 6.66675 10.5956 5.83341 11.786 5.83341C13.101 5.83341 14.167 4.76743 14.167 3.45246V2.91675" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.66634 7.5V7.08333C6.66634 5.70262 7.78563 4.58333 9.16634 4.58333C10.0868 4.58333 10.833 3.83714 10.833 2.91667V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.333 9.16675H15.4163C16.5669 9.16675 17.4997 10.0995 17.4997 11.2501C17.4997 12.4007 16.5669 13.3334 15.4163 13.3334H14.1663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </a>
                         </li>
                     </ul>
@@ -66,10 +77,14 @@
                             </svg>
                         </a>
                     </div>
-                    <button class="burger" type="button">
-                        <svg viewBox="0 0 18 10" fill="none">
+                    <button class="burger" id="burger-js" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open mobile menu">
+                        <svg class="burger__icon burger__icon--open" viewBox="0 0 18 10" fill="none">
                             <path d="M0.75 0.75H16.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M0.75 8.75H16.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <svg class="burger__icon burger__icon--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" fill="none">
+                            <path d="M0.75 0.75L12.0637 12.0637" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M0.75 12.0637L12.0637 0.750013" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
                 </div>

@@ -3,6 +3,10 @@
 const theme = window.localStorage.getItem('theme');
 const switchThemeElement = document.getElementById('switch-theme-js');
 const htmlElement = document.documentElement;
+const bodyElement = document.body;
+const burgerElement = document.getElementById('burger-js');
+const navElement = document.getElementById('mobile-nav');
+
 if(theme) {
   htmlElement.dataset.theme = theme;
 } 
@@ -17,4 +21,32 @@ switchThemeElement.addEventListener('click', function () {
   }
 });
 
-console.log(window.location.pathname);
+const openMobileMenu = function() {
+  bodyElement.classList.add('is-menu-open');
+  burgerElement.setAttribute('aria-expanded', 'true');
+  burgerElement.setAttribute('aria-label', 'Close mobile menu');
+}
+
+const closeMobileMenu = function() {
+  bodyElement.classList.remove('is-menu-open');
+  burgerElement.setAttribute('aria-expanded', 'false');
+  burgerElement.setAttribute('aria-label', 'Open mobile menu');
+}
+
+const toggleMobileMenu = function() {
+  if(bodyElement.classList.contains('is-menu-open')) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+burgerElement.addEventListener('click', function() {
+  toggleMobileMenu();
+});
+
+navElement.addEventListener('click', function(e) {
+  if(e.target.closest('.nav__link')) {
+    closeMobileMenu();
+  }
+});
