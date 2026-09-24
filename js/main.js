@@ -1,12 +1,7 @@
-'use strict';
-
 const theme = window.localStorage.getItem('theme');
 const switchThemeElement = document.getElementById('switch-theme-js');
 const htmlElement = document.documentElement;
 const bodyElement = document.body;
-const burgerElement = document.getElementById('burger-js');
-const navElement = document.getElementById('mobile-nav');
-const desktopSize = window.matchMedia('(min-width: 769px)');
 
 if(theme) {
   htmlElement.dataset.theme = theme;
@@ -21,6 +16,10 @@ switchThemeElement.addEventListener('click', function () {
     window.localStorage.setItem('theme', 'light');
   }
 });
+
+const burgerElement = document.getElementById('burger-js');
+const navElement = document.getElementById('mobile-nav');
+const desktopSize = window.matchMedia('(min-width: 769px)');
 
 const openMobileMenu = function() {
   bodyElement.classList.add('is-menu-open');
@@ -52,8 +51,11 @@ navElement.addEventListener('click', function(e) {
   }
 });
 
-console.log(desktopSize);
-
 desktopSize.addEventListener('change', (e) => {
   if (e.matches) closeMobileMenu();
 });
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMobileMenu();
+});
+
