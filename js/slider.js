@@ -36,3 +36,5 @@ dots.forEach((dot, index) => {
     renderSlider();
   });
 });
+
+renderSlider();
