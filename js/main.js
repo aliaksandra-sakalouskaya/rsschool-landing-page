@@ -6,6 +6,7 @@ const htmlElement = document.documentElement;
 const bodyElement = document.body;
 const burgerElement = document.getElementById('burger-js');
 const navElement = document.getElementById('mobile-nav');
+const desktopSize = window.matchMedia('(min-width: 769px)');
 
 if(theme) {
   htmlElement.dataset.theme = theme;
@@ -49,4 +50,10 @@ navElement.addEventListener('click', function(e) {
   if(e.target.closest('.nav__link')) {
     closeMobileMenu();
   }
+});
+
+console.log(desktopSize);
+
+desktopSize.addEventListener('change', (e) => {
+  if (e.matches) closeMobileMenu();
 });

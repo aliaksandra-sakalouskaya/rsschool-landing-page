@@ -173,6 +173,12 @@ button {
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .button-primary svg {
+        visibility: visible;
+    }
+}
+
 @media (max-width: 670px) { 
     .container {
         padding: 0 var(--indent-base);
