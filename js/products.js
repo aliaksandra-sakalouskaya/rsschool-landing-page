@@ -204,6 +204,8 @@ productListElement.addEventListener('click', function(e) {
   currentProduct = filteredProducts.find(filteredProduct => filteredProduct.id === currentProductElement.dataset.id);
   cardModalElement.innerHTML = createProductModal();
   optionsButtonElements = cardModalElement.querySelectorAll('.options__button');
+  optionsButtonElements[0].classList.add('is-active');
+  renderTotal();
   chooseOptions();
   openProductModal();
 });
